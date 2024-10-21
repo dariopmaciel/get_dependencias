@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 class MetodosHomePage extends StatelessWidget {
   const MetodosHomePage({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +18,13 @@ class MetodosHomePage extends StatelessWidget {
                 Navigator.of(context).pushNamed('/metodos/put');
               },
               child: const Text('PUT'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Get.to(() => const BasicoHomePage());
+                Navigator.of(context).pushNamed('/metodos/lazy');
+              },
+              child: const Text("Lazy Put"),
             ),
           ],
         ),
