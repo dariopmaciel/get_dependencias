@@ -7,6 +7,7 @@ class BasicoHomePage extends StatelessWidget {
   BasicoHomePage({super.key});
   
   // final controller = BasicoController();
+  //!Gereniamento de dependencias com GET
   final controller = Get.put(BasicoController());
 
 
@@ -34,7 +35,7 @@ class BasicoHomePage extends StatelessWidget {
             //   onPressed: () => controller.alterarNome('Dario P MAciel'),
             //   child: const Text('Alterar'),
             // ),
-            WidgetInterno(controller)
+            const WidgetInterno()
           ],
         ),
       ),
@@ -49,11 +50,13 @@ class WidgetInterno extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('WidgetInterno'),
+        const Text('Widget Interno'),
         const SizedBox(height: 20),
         ElevatedButton(
-          onPressed: () => controller.alterarNome('Dario P MAciel'),
-          child: const Text('Alterar'),
+          // onPressed: () => controller.alterarNome('Dario P MAciel'),
+          //!Gerenciamento de dependencia com GET
+          onPressed: () => Get.find<BasicoController>().alterarNome('Dario P MAciel'),
+          child: const Text('Alterar Nome'),
         ),
       ],
     );
