@@ -26,6 +26,13 @@ class MetodosHomePage extends StatelessWidget {
               },
               child: const Text("Lazy Put"),
             ),
+             ElevatedButton(
+              onPressed: () {
+                // Get.to(() => const BasicoHomePage());
+                Navigator.of(context).pushNamed('/metodos/putAsync');
+              },
+              child: const Text("Put Async"),
+            ),
           ],
         ),
       ),

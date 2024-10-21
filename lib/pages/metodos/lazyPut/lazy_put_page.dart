@@ -8,8 +8,9 @@ class LazyPutPage extends StatefulWidget {
     //!inicialização Tardia conforme comparado com PUT que inicializa tudo ao se instanciar.
     //! o lazyPut não inicializa, somente quando demandado
     Get.lazyPut(() => LazyPutController());
-    Get.lazyPut(() => LazyPutFenixController(), fenix: true); //! GUARDA A FACTORY e cada invocação uma nova fabrica
-    // Get.put(LazyPutFenixController(), permanent: true);//! GUARDA A INSTANCIA, a classe.
+    Get.lazyPut(() => LazyPutFenixController(), fenix: true); //! GUARDA A FACTORY e cada invocação uma nova fabrica MATANDO a classe, podendo ser acessada de qualquer lugar
+    //* Get.put(LazyPutFenixController(), permanent: true);//! GUARDA A INSTANCIA, a classe. 
+    //alterar para visualizar
   }
 
   @override
