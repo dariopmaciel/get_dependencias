@@ -20,6 +20,13 @@ class HomePage extends StatelessWidget {
               },
               child: const Text("Básico"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                // Get.to(() => const BasicoHomePage());
+                Navigator.of(context).pushNamed('/metodos');
+              },
+              child: const Text("Métodos"),
+            ),
           ],
         ),
       ),

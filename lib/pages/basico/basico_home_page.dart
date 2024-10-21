@@ -5,11 +5,10 @@ import 'package:get_dependencias/pages/basico/basico_controller.dart';
 
 class BasicoHomePage extends StatelessWidget {
   BasicoHomePage({super.key});
-  
+
   // final controller = BasicoController();
   //!Gereniamento de dependencias com GET
   final controller = Get.put(BasicoController());
-
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +54,8 @@ class WidgetInterno extends StatelessWidget {
         ElevatedButton(
           // onPressed: () => controller.alterarNome('Dario P MAciel'),
           //!Gerenciamento de dependencia com GET
-          onPressed: () => Get.find<BasicoController>().alterarNome('Dario P MAciel'),
+          onPressed: () =>
+              Get.find<BasicoController>().alterarNome('Dario P MAciel'),
           child: const Text('Alterar Nome'),
         ),
       ],
