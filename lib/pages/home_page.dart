@@ -27,8 +27,27 @@ class HomePage extends StatelessWidget {
               },
               child: const Text("Métodos"),
             ),
-            
-              
+            ElevatedButton(
+              onPressed: () {
+                // Get.to(() => const BasicoHomePage());
+                Navigator.of(context).pushNamed('/bindings');
+              },
+              child: const Text("Bindings"),
+            ),
+             ElevatedButton(
+              onPressed: () {
+                // Get.to(() => const BasicoHomePage());
+                Navigator.of(context).pushNamed('/bindings_builder');
+              },
+              child: const Text("Bindings Builder"),
+            ),
+             ElevatedButton(
+              onPressed: () {
+                // Get.to(() => const BasicoHomePage());
+                Navigator.of(context).pushNamed('/bindings_builder_put');
+              },
+              child: const Text("Bindings Builder Put"),
+            ),
           ],
         ),
       ),
