@@ -43,12 +43,12 @@ class MyApp extends StatelessWidget {
               GetPage(name: '/delete', page: () => DeletePage()),
             ]),
         GetPage(
-          name: '/bindings',
+          name: '/bindings', //classe para carregar mais de uma classe
           binding: BindingsExemplo(),
           page: () => const HomeBindings(),
         ),
         GetPage(
-          name: '/bindings_builder',
+          name: '/bindings_builder', //não precisa criar outra classe para carregar dentro da rota
           binding: BindingsBuilder(() {
             Get.put(
               BindingsController(
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
           page: () => const HomeBindings(),
         ),
         GetPage(
-          name: '/bindings_builder_put',
+          name: '/bindings_builder_put', //passa a instancia e automaticamente disponibiliza o get.put
           binding: BindingsBuilder.put(
             () => BindingsController(
                 nome: 'Inicializado dentro do BindingsBuilderPut'),
