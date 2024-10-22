@@ -71,6 +71,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Initial Binding'),
             ),
+             ElevatedButton(
+              onPressed: () {
+                Get.toNamed('/service');
+              },
+              child: const Text('GetX Service Page'),
+            ),
           ],
         ),
       ),
