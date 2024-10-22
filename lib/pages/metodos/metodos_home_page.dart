@@ -26,19 +26,27 @@ class MetodosHomePage extends StatelessWidget {
               },
               child: const Text("Lazy Put"),
             ),
-             ElevatedButton(
+            ElevatedButton(
               onPressed: () {
                 // Get.to(() => const BasicoHomePage());
                 Navigator.of(context).pushNamed('/metodos/putAsync');
               },
               child: const Text("Put Async"),
             ),
-             ElevatedButton(
+            ElevatedButton(
               onPressed: () {
                 // Get.to(() => const BasicoHomePage());
                 Navigator.of(context).pushNamed('/metodos/create');
               },
               child: const Text("Create"),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Get.to(() => const BasicoHomePage());
+                Navigator.of(context).pushNamed('/metodos/delete_update');
+              },
+              child: const Text("Update & Delete"),
             ),
           ],
         ),
