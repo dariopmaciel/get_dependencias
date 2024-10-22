@@ -59,10 +59,17 @@ class HomePage extends StatelessWidget {
                 // Navigator.of(context).pushNamed('/bindings_builder_put');
                 Get.to(() => const HomeBindings(),
                     binding: BindingsBuilder.put(
-                      () => BindingsController(nome: '>>>Inicializado pelo Binding SEM rota!'),
+                      () => BindingsController(
+                          nome: '>>>Inicializado pelo Binding SEM rota!'),
                     ));
               },
               child: const Text("Bindings SEM Rota Nomeada"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed('/initial_binding_page');
+              },
+              child: const Text('Initial Binding'),
             ),
           ],
         ),

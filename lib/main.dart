@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_dependencias/pages/basico/basico_home_page.dart';
 import 'package:get_dependencias/pages/home_page.dart';
+import 'package:get_dependencias/pages/initialBinding/initial_binding.dart';
+import 'package:get_dependencias/pages/initialBinding/initial_binding_page.dart';
 import 'package:get_dependencias/pages/metodos/bindings/bindings_controller.dart';
 import 'package:get_dependencias/pages/metodos/bindings/bindings_exemplo.dart';
 import 'package:get_dependencias/pages/metodos/bindings/home_bindings.dart';
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: InitialBinding(),
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Colors.blue,
@@ -52,25 +55,24 @@ class MyApp extends StatelessWidget {
           page: () => const HomeBindings(),
         ),
         GetPage(
-          name:
-              '/bindings_builder', //não precisa criar outra classe para carregar dentro da rota
-          binding: BindingsBuilder(() {
-            Get.put(
-              BindingsController(
-                  nome: 'Inicializado dentro do Bindings Builder'),
-            );
-          }),
-          page: () => const HomeBindings(),
-        ),
+            name:
+                '/bindings_builder', //não precisa criar outra classe para carregar dentro da rota
+            binding: BindingsBuilder(() {
+              Get.put(BindingsController(
+                  nome: 'Inicializado dentro do Bindings Builder'));
+            }),
+            page: () => const HomeBindings()),
         GetPage(
-          name:
-              '/bindings_builder_put', //passa a instancia e automaticamente disponibiliza o get.put
-          binding: BindingsBuilder.put(
-            () => BindingsController(
-                nome: 'Inicializado dentro do BindingsBuilderPut'),
-          ),
-          page: () => const HomeBindings(),
-        ),
+            name:
+                '/bindings_builder_put', //passa a instancia e automaticamente disponibiliza o get.put
+            binding: BindingsBuilder.put(
+              () => BindingsController(
+                  nome: 'Inicializado dentro do BindingsBuilderPut'),
+            ),
+            page: () => const HomeBindings()),
+        GetPage(
+            name: '/initial_binding_page',
+            page: () => const InitialBindingPage()),
       ],
     );
   }
