@@ -5,6 +5,7 @@ import 'package:get_dependencias/pages/home_page.dart';
 import 'package:get_dependencias/pages/metodos/bindings/bindings_controller.dart';
 import 'package:get_dependencias/pages/metodos/bindings/bindings_exemplo.dart';
 import 'package:get_dependencias/pages/metodos/bindings/home_bindings.dart';
+import 'package:get_dependencias/pages/metodos/bindings/middleware_binding.dart';
 import 'package:get_dependencias/pages/metodos/create/create_home_page.dart';
 import 'package:get_dependencias/pages/metodos/delete_update/delete_page.dart';
 import 'package:get_dependencias/pages/metodos/delete_update/update_home_page.dart';
@@ -45,10 +46,14 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/bindings', //classe para carregar mais de uma classe
           binding: BindingsExemplo(),
+          middlewares: [
+            MiddlewareBinding(),
+          ],
           page: () => const HomeBindings(),
         ),
         GetPage(
-          name: '/bindings_builder', //não precisa criar outra classe para carregar dentro da rota
+          name:
+              '/bindings_builder', //não precisa criar outra classe para carregar dentro da rota
           binding: BindingsBuilder(() {
             Get.put(
               BindingsController(
@@ -58,7 +63,8 @@ class MyApp extends StatelessWidget {
           page: () => const HomeBindings(),
         ),
         GetPage(
-          name: '/bindings_builder_put', //passa a instancia e automaticamente disponibiliza o get.put
+          name:
+              '/bindings_builder_put', //passa a instancia e automaticamente disponibiliza o get.put
           binding: BindingsBuilder.put(
             () => BindingsController(
                 nome: 'Inicializado dentro do BindingsBuilderPut'),

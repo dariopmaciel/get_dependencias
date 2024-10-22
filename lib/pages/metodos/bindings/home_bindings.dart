@@ -17,6 +17,7 @@ class HomeBindings extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(Get.find<BindingsController>().nome),
+          // Text(Get.find<String>()),//pega o novo binding
         ],
       )),
     );
