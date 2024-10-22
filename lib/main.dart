@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_dependencias/pages/basico/basico_home_page.dart';
 import 'package:get_dependencias/pages/home_page.dart';
 import 'package:get_dependencias/pages/metodos/create/create_home_page.dart';
+import 'package:get_dependencias/pages/metodos/delete_update/delete_page.dart';
 import 'package:get_dependencias/pages/metodos/delete_update/update_home_page.dart';
 import 'package:get_dependencias/pages/metodos/lazyPut/lazy_put_page.dart';
 import 'package:get_dependencias/pages/metodos/metodos_home_page.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
               GetPage(name: '/lazy', page: () => LazyPutPage()),
               GetPage(name: '/putAsync', page: () => PutAsyncPage()),
               GetPage(name: '/create', page: () =>  CreateHomePage()),
-              GetPage(name: '/delete_update', page: () =>  UpdateHomePage()),
+              GetPage(name: '/update', page: () =>  UpdateHomePage()),
+              GetPage(name: '/delete', page: () =>  DeletePage()),
             ]),
       ],
     );

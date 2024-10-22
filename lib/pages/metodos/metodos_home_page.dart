@@ -44,7 +44,7 @@ class MetodosHomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Get.to(() => const BasicoHomePage());
-                Navigator.of(context).pushNamed('/metodos/delete_update');
+                Navigator.of(context).pushNamed('/metodos/update');
               },
               child: const Text("Update & Delete"),
             ),

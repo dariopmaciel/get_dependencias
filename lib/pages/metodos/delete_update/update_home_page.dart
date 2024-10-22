@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_dependencias/pages/metodos/delete_update/delete_controller.dart';
 import 'package:get_dependencias/pages/metodos/delete_update/update_controller.dart';
 
 class UpdateHomePage extends StatefulWidget {
   UpdateHomePage({super.key}) {
     Get.put(UpdateController(nome: 'Adicionado no inicio'));
+    Get.put(DeleteController(nome: 'Adicionado no inicio'),permanent: true);
   }
 
   @override
@@ -35,16 +37,23 @@ class _UpdateHomePageState extends State<UpdateHomePage> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Get.replace(UpdateController(nome: 'Alterado no CLICK do Botão'),
+                  Get.replace(
+                    UpdateController(nome: 'Alterado no CLICK do Botão'),
                   );
                 },
                 child: const Text("Alterando Instancia"),
               ),
-                ElevatedButton(
+              ElevatedButton(
                 onPressed: () {
                   Get.delete<UpdateController>();
                 },
                 child: const Text("Removendo Instancia"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.offNamed('/metodos/delete');
+                },
+                child: const Text("Indo para Delete"),
               ),
             ],
           ),
